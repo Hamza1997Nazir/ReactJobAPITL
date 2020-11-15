@@ -2,16 +2,27 @@ import React from 'react';
 import './AdCard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// ShowDescription = () =>
+// {
+//     return 
+//     (
+//         console.log("was clicked")
+//     )
+// }
 
 
 const CardMaking = (props) => {
     return (
-        <div className="card" >
+        <div key={props.id} className="card" >
             <div className="card-body">
                 <h5 className="card-title">{props.Title}</h5>
+    <h6 className="card-text">Company: {props.companyName}</h6>
                 <h6 className="card-text">{props.Location}</h6>
-               {/* <button class="btn btn-primary" onClick={this.ShowDescription} >See Details</button>*/}
-                <br></br>
+                <p className="card-text">Posted by {props.Email}</p>
+                <p className="card-text">Posted on {props.postedAt}</p>
+                <button class="btn btn-primary" >See Details</button>
+                <br />
+                <br />
                 {/*<p className="card-text">{props.Description}</p>  it is too large*/}
                 <a href={props.Apply} class="btn btn-primary">Apply Now</a>
             </div>

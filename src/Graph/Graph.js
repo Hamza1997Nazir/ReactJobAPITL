@@ -15,6 +15,8 @@ jobs
         Description: description
         Location: locationNames
         Apply: applyUrl
+        postedAt
+        Email : userEmail
         company{
             name
           }
@@ -54,7 +56,7 @@ class Graph extends Component {
             return data.jobs.map(j => {
                 return (
                     //feeding into card component using props
-                    <Card Title={j.Title} Description={j.Description} Location={j.Location} Apply={j.Apply}  />
+                    <Card companyName={j.company.name} id ={j.id} Title={j.Title} Description={j.Description} Location={j.Location} Apply={j.Apply} Email={j.Email} Posted = {j.postedAt} />
                   /*
                   // other simple way of displaying data instead of props
                   // with this we do not need another component like AdCard.
