@@ -2,13 +2,7 @@ import React from 'react';
 import './AdCard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// ShowDescription = () =>
-// {
-//     return 
-//     (
-//         console.log("was clicked")
-//     )
-// }
+
 
 
 const CardMaking = (props) => {
@@ -20,9 +14,10 @@ const CardMaking = (props) => {
                 <h6 className="card-text">{props.Location}</h6>
                 <p className="card-text">Posted by {props.Email}</p>
                 <p className="card-text">Posted on {props.postedAt}</p>
-                <button class="btn btn-primary" >See Details</button>
+                <button class="btn btn-primary" onClick={props.click}>See Details</button>
                 <br />
-                <br />
+                <br/>
+                {/*<p>{props.det}</p>*/}
                 {/*<p className="card-text">{props.Description}</p>  it is too large*/}
                 <a href={props.Apply} class="btn btn-primary">Apply Now</a>
             </div>

@@ -43,12 +43,13 @@ class Graph extends Component {
 
 
 
+
     jobsList() {
         let data = this.props.data;
         if (data.loading) {
             return (
                 <div>
-                    <h3> Bringing Jobs for you...</h3>
+                    <h3 className="loading"> Bringing Jobs for you...</h3>
                 </div>
             )
         }
@@ -56,22 +57,19 @@ class Graph extends Component {
             return data.jobs.map(j => {
                 return (
                     //feeding into card component using props
-                    <Card companyName={j.company.name} id ={j.id} Title={j.Title} Description={j.Description} Location={j.Location} Apply={j.Apply} Email={j.Email} Posted = {j.postedAt} />
-                  /*
-                  // other simple way of displaying data instead of props
-                  // with this we do not need another component like AdCard.
-                  // I got stuck here for some reasons so I tried the above method
-                  <div>
-                  <ul className="List">                  
-                        <li key={j.id}>{j.Title}</li>
-                        <li>{j.Location}</li>
-                        <li><a href={j.Apply}>Apply Here</a></li>
-                       
-                        
-                    </ul>
-                    </div>
+                    <Card companyName={j.company.name} id={j.id} Title={j.Title} Description={j.Description} Location={j.Location} Apply={j.Apply} Email={j.Email} Posted={j.postedAt} />
+                    /*
+                    // other simple way of displaying data instead of props
+                    // with this we do not need another component like AdCard.
+                    // I got stuck here for some reasons so I tried the above method
+                    <div>
+                    <ul className="List">                  
+                          <li key={j.id}>{j.Title}</li>
+                          <li>{j.Location}</li>
+                          <li><a href={j.Apply}>Apply Here</a></li> 
+                      </ul>
+                      </div>
                     */
-
                 )
             })
         }
@@ -86,4 +84,4 @@ class Graph extends Component {
         )
     };
 }
-export default graphql(Get_Jobs)(Graph);
+export default graphql(Get_Jobs)(Graph); // this is how gql response is binded with react
